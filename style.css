@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
 header{
     width: 100%;
     height: 69px;
@@ -5,11 +9,88 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
-    font-family: 'Roboto', sans-serif;
+    color: #ffffff;    
     font-size: 37px;
     font-weight: 700;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     position: fixed;
     top: 0;
+    z-index: 3;
+}
+.pagina2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 69px;
+}
+.tituloQuizz{
+    width: 100%;
+    height: 227px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.tituloQuizz img{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57));
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+}
+.tituloQuizz div{
+    font-weight: 400;
+    font-size: 39px;
+    color: #ffffff;
+    position: absolute;    
+    z-index: 2;
+}
+.caixaDePergunta{
+    margin-top: 42px;
+    width: 759px;
+    height: 670px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+}
+.pergunta{
+    width: 90%;
+    height: 20%;
+    background-color: #434CA0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 23px;
+    color: #ffffff;
+    margin-top: 27.91px;
+}
+.respostas{
+    width: 90%;
+    height: 20%;
+    margin-top: 20.16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 24.29px;
+    row-gap: 18.61px;
+}
+/*.resposta{
+   
+}*/
+.resposta img{
+    width: 320px;
+    height: 173px;
+    border-radius: 8px;    
+}
+.resposta div{
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+    align-items: center;
 }

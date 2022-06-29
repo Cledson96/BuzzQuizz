@@ -28,7 +28,7 @@ header {
     border: 1px dashed #D5D5D5;
     border-color: #EC362D;
     border-radius: 25px;
-    color: #EC362D;
+    color: #EC362D; 
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -36,7 +36,7 @@ header {
     line-height: 25px;
     width: 151px;
     height: 40px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .listaQuizz {
@@ -48,7 +48,6 @@ header {
     display: flex;
     height: 182px;
     width: 100%;
-
 }
 
 h1 {

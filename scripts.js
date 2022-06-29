@@ -6,8 +6,18 @@ function puxarQuizz() {
 }
 
 function adicionarQuizz(ref) {
-TodosQuizz=ref.data;
-console.log(TodosQuizz);
+    TodosQuizz = ref.data;
+
+    for (let i = 0; i < TodosQuizz.length; i++) {
+        let caixa = document.querySelector(".todos");
+        caixa.innerHTML +=
+            `<div class="tema">
+                <img src=${TodosQuizz[i].image}>
+                <p class="TituloQuizz">${TodosQuizz[i].title}</p>
+            </div>`
+    }
+    console.log(TodosQuizz);
+
 }
 
 function erro() {

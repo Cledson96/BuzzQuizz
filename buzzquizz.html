@@ -11,9 +11,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <header>BuzzQuizz</header>    
-    <div class="pagina2">
-        <div class="tituloQuizz"><!--Você precisa adicionar o gradiente da imagem-->
+    <header>BuzzQuizz</header>  
+    <!-- Tela 1-->
+    <div class="listaQuizz">
+        <div class="quizz criados">
+            <h2>Você não criou nenhum quizz ainda :(</h2>
+            <button>Criar Quizz</button>
+        </div>
+        <h1>Todos os Quizzes</h1>
+        <div class="quizz todos"></div>
+    </div> 
+    <!-- Tela 1-->
+    <!-- Página 2 -->
+    <div class="pagina2 invisivel">
+        <div class="tituloDoQuizz"><!--Você precisa adicionar o gradiente da imagem-->
             <img src="ArquivosDeMídia/ImagemTeste.jpeg">
             <div>Título do quizz</div>
         </div>
@@ -40,4 +51,7 @@
         </div>
         
     </div>
+    <!--Página 2-->    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts.js"></script>
 </body>

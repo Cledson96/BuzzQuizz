@@ -1,3 +1,6 @@
+body {
+    background-color: #E5E5E5;
+}
 header {
     width: 100vw;
     height: 69px;
@@ -14,14 +17,38 @@ header {
     top: 0;
 }
 
-.listaQuizz{
+.criados {
+    margin-top: 146px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.criados button {
+    border: 1px dashed #D5D5D5;
+    border-color: #EC362D;
+    border-radius: 25px;
+    color: #EC362D;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 25px;
+    width: 151px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.listaQuizz {
     max-width: 1051px;
     margin: 0 auto;
 }
 
 .quizz {
-    background-color: black;
+    display: flex;
     height: 182px;
+    width: 100%;
+
 }
 
 h1 {
@@ -32,4 +59,17 @@ h1 {
     font-size: 20px;
     line-height: 23px;
     color: #000000;
+    margin-bottom: 12px;
+}
+
+h2 {
+    max-width: 250px;
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #B9B9B9;
+
 }

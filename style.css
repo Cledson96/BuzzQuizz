@@ -18,6 +18,7 @@ header {
     top: 0;
     z-index: 10;
 }
+
 .listaQuizz {
     max-width: 1090px;
     margin: 0 auto;
@@ -84,7 +85,10 @@ h2 {
     position: relative;
     margin-right: 15px;
     margin-bottom: 12px;
-
+}
+.tema :hover{
+    background: blue; 
+    box-shadow: 0 0 50px rgba(78, 47, 255, 0.938);
 }
 
 .tema img {
@@ -106,5 +110,5 @@ h2 {
     position: absolute;
     bottom: 7px;
     text-align: center;
-    
+
 }

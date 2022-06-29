@@ -4,7 +4,7 @@ function puxarQuizz() {
     promessa.then(adicionarQuizz);
     promessa.catch(erro);
 }
-
+puxarQuizz();
 function adicionarQuizz(ref) {
     TodosQuizz = ref.data;
 

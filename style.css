@@ -98,6 +98,7 @@ header {
     align-items: center;
 }
 /*Aqui é o fim do layout da página2*/
+
 .listaQuizz {
     max-width: 1090px;
     margin: 0 auto;
@@ -164,7 +165,10 @@ h2 {
     position: relative;
     margin-right: 15px;
     margin-bottom: 12px;
-
+}
+.tema :hover{
+    background: blue; 
+    box-shadow: 0 0 50px rgba(78, 47, 255, 0.938);
 }
 
 .tema img {

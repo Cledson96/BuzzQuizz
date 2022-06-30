@@ -11,7 +11,7 @@ function adicionarQuizz(ref) {
     for (let i = 0; i < TodosQuizz.length; i++) {
         let caixa = document.querySelector(".todos");
         caixa.innerHTML +=
-            `<div class="tema">
+            `<div onclick="proximaPagina()" class="tema">
                 <img src=${TodosQuizz[i].image}>
                 <p class="TituloQuizz">${TodosQuizz[i].title}</p>
             </div>`

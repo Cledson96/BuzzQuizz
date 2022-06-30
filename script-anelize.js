@@ -8,18 +8,9 @@ function proximaPagina(){
     nextpage2.classList.remove("invisivel");
 }
 /*Fim da função de avançar para tela 2*/
-/*Função que "pega dados no servidor"*/
-let dadosDoServidor = {};
-armazenarDados();
-function armazenarDados(){
-    let dados = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes");
-    dados.catch(CasodeErro);
-    dados.then(processarDados);
+/*Função que adiciona a escolha da resposta certa*/
+let n = 0;//variavel global
+function executarResposta(elemento){
+    console.log("executado");
 }
-function processarDados(resposta){
-    dadosDoServidor = resposta.data;
-    console.log(dadosDoServidor);
-}
-function CasodeErro(erro){
-    console.log("Dados não foram processados");
-}
+/*Fim da função que adiciona a resosta certa"*/

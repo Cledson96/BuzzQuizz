@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />   
+    <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta name="Buzz Quizz Game" />
     <title>Buzz Quizz</title>
@@ -14,7 +14,7 @@
 <body>
     <header>BuzzQuizz</header>
     <!-- Tela 1-->
-    <div class="listaQuizz">
+    <div class="listaQuizz invisivel">
         <div class="quizz criados">
             <h2>Você não criou nenhum quizz ainda :(</h2>
         </div>
@@ -22,11 +22,11 @@
         <div class="quizz todos"></div>
     </div>
     <!-- Tela 1-->
-    <!-- Página 2 -->     
+    <!-- Página 2 -->
     <!-- Ajustes finais:
         Adicionar degradê da imagem
         Tentar arrumar a responssividade da caixaDePergunta        
-    -->     
+    -->
     <div class="pagina2 invisivel">
         <div class="tituloDoQuizz">
             <img src="ArquivosDeMídia/ImagemTeste.jpeg">
@@ -54,19 +54,19 @@
             </div>
         </div>
         <!--Caixa de porcentagem de acerto-->
-    <div class="porcentagemAcerto">
-        <div class="porcentagem">Aqui vai a porcentagem de acerto</div>
-        <div class="porcentagemTexto">
-            <img src="ArquivosDeMídia/ImagemTeste.jpeg">
-            <div>texto texto texto texto texto texto texto texto texto texto texto texto texto</div>
+        <div class="porcentagemAcerto">
+            <div class="porcentagem">Aqui vai a porcentagem de acerto</div>
+            <div class="porcentagemTexto">
+                <img src="ArquivosDeMídia/ImagemTeste.jpeg">
+                <div>texto texto texto texto texto texto texto texto texto texto texto texto texto</div>
+            </div>
         </div>
+        <!--Botão Reiniciar Quizz-->
+        <div class="botaoReiniciar">Reiniciar Quizz</div>
+        <!--Voltar para home-->
+        <div class="voltarHome">Voltar para home</div>
     </div>
-    <!--Botão Reiniciar Quizz-->
-    <div class="botaoReiniciar">Reiniciar Quizz</div>
-    <!--Voltar para home-->   
-    <div class="voltarHome">Voltar para home</div> 
-    </div>
-    
+
     <!--Criando Quiz parte 1-->
 
     <div class="cadastro info_basica invisivel">
@@ -84,9 +84,13 @@
     <!--Criando Quiz parte 1-->
 
     <!--Criando Quiz parte 2-->
-    <div class="cadastro perguntasquizz invisivel">
+    <div class="cadastro perguntasquizz adiciona">
         <h1>Crie suas perguntas</h1>
 
+        <div class="pergunta_1">
+            <h1>Pergunta 1</h1>
+            <img src="/ArquivosDeMídia/editar.png">
+        </div>
         <div class="perguntas um adiciona">
             <h1>Pergunta 1</h1>
             <input type="text" placeholder="Texto da pergunta">
@@ -99,15 +103,19 @@
             <h1>Respostas incorretas</h1>
             <input type="text" placeholder="Resposta incorreta 1">
             <input type="text" placeholder="URL da imagem 1">
-            <br/>
+            <br />
             <input type="text" placeholder="Resposta incorreta 2">
             <input type="text" placeholder="URL da imagem 2">
-            <br/>
+            <br />
             <input type="text" placeholder="Resposta incorreta 3">
             <input type="text" placeholder="URL da imagem 3">
-            <br/>
+            <br />
 
 
+        </div>
+        <div class="pergunta_1">
+            <h1>Pergunta 2</h1>
+            <img src="/ArquivosDeMídia/editar.png">
         </div>
         <div class="perguntas dois invisivel ">
             <h1>Pergunta 2</h1>
@@ -121,15 +129,19 @@
             <h1>Respostas incorretas</h1>
             <input type="text" placeholder="Resposta incorreta 1">
             <input type="text" placeholder="URL da imagem 1">
-            <br/>
+            <br />
             <input type="text" placeholder="Resposta incorreta 2">
             <input type="text" placeholder="URL da imagem 2">
-            <br/>
+            <br />
             <input type="text" placeholder="Resposta incorreta 3">
             <input type="text" placeholder="URL da imagem 3">
-            <br/>
+            <br />
 
 
+        </div>
+        <div class="pergunta_1">
+            <h1>Pergunta 3</h1>
+            <img src="/ArquivosDeMídia/editar.png">
         </div>
         <div class="perguntas tres invisivel">
             <h1>Pergunta 3</h1>
@@ -143,13 +155,13 @@
             <h1>Respostas incorretas</h1>
             <input type="text" placeholder="Resposta incorreta 1">
             <input type="text" placeholder="URL da imagem 1">
-            <br/>
+            <br />
             <input type="text" placeholder="Resposta incorreta 2">
             <input type="text" placeholder="URL da imagem 2">
-            <br/>
+            <br />
             <input type="text" placeholder="Resposta incorreta 3">
             <input type="text" placeholder="URL da imagem 3">
-            <br/>
+            <br />
 
 
         </div>

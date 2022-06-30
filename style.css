@@ -7,6 +7,10 @@
     display: none;
 }
 
+.adiciona {
+    display: flex;
+}
+
 body {
     background-color: #E5E5E5;
 }
@@ -110,7 +114,8 @@ header {
     color: #000000;
     align-items: center;
 }
-.porcentagemAcerto{
+
+.porcentagemAcerto {
     width: 759px;
     height: 430px;
     background-color: #ffffff;
@@ -121,7 +126,8 @@ header {
     align-items: center;
     row-gap: 18px;
 }
-.porcentagem{
+
+.porcentagem {
     width: 727px;
     height: 99px;
     background-color: #EC362D;
@@ -132,24 +138,28 @@ header {
     align-items: center;
     color: #ffffff;
 }
-.porcentagemTexto{
+
+.porcentagemTexto {
     display: flex;
-    column-gap: 21px;    
+    column-gap: 21px;
 }
-.porcentagemTexto img{
+
+.porcentagemTexto img {
     display: flex;
     flex-wrap: wrap;
     width: 364px;
     height: 273px;
 }
-.porcentagemTexto div{
+
+.porcentagemTexto div {
     height: 250px;
     width: 328px;
     color: #484848;
     font-weight: 700px;
     font-size: 19px;
 }
-.botaoReiniciar{
+
+.botaoReiniciar {
     width: 260.38px;
     height: 52px;
     background-color: #EC362D;
@@ -161,7 +171,8 @@ header {
     justify-content: center;
     align-items: center;
 }
-.voltarHome{
+
+.voltarHome {
     width: 219.64px;
     height: 44px;
     font-weight: 400;
@@ -169,8 +180,9 @@ header {
     color: #818181;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 }
+
 /*Aqui é o fim do layout da página2*/
 
 .listaQuizz {
@@ -209,7 +221,6 @@ header {
 }
 
 h1 {
-    margin-top: 77px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -269,14 +280,12 @@ h2 {
 }
 
 .cadastro {
-    display: flex;
     flex-direction: column;
     height: 100%;
-   align-items: center;
-}
-.cadastro h1 {
+    align-items: center;
     margin-top: 105px;
 }
+
 .cadastro button {
     background: #EC362D;
     border-radius: 15px;
@@ -296,7 +305,6 @@ h2 {
 }
 
 .perguntas {
-    display: flex;
     flex-direction: column;
     margin-top: 50px;
     padding-left: 18px;
@@ -304,10 +312,12 @@ h2 {
     width: 375px;
 
 }
+
 .pergunta h1 {
     text-align: start;
     font-size: 50px;
 }
+
 input {
     margin-bottom: 9px;
     height: 46px;
@@ -332,75 +342,92 @@ input {
     .tema {
         max-width: 340px;
     }
+
     /*Ajustes para a página2*/
-    header{
+    header {
         width: 100%;
     }
-    .pagina2{
+
+    .pagina2 {
         width: 100%;
     }
-    .tituloDoQuizz{
+
+    .tituloDoQuizz {
         width: 100%;
         height: 142px;
     }
-    .tituloDoQuizz img{
+
+    .tituloDoQuizz img {
         max-width: 100%;
         max-height: 100%;
     }
-    .tituloDoQuizz div{
+
+    .tituloDoQuizz div {
         font-size: 19px;
     }
-    .caixaDePergunta{
+
+    .caixaDePergunta {
         width: 375px;
         height: 436px;
     }
-    .respostas{
+
+    .respostas {
         display: flex;
         flex-wrap: wrap;
     }
-    .resposta img{
+
+    .resposta img {
         width: 150px;
         height: 100px;
         border-radius: 0px;
     }
-    .pergunta{
+
+    .pergunta {
         font-size: 19px;
     }
-    .resposta div{
+
+    .resposta div {
         font-size: 13px;
     }
-    .porcentagemAcerto{
+
+    .porcentagemAcerto {
         width: 375px;
         height: 500px;
     }
-    .porcentagem{
+
+    .porcentagem {
         width: 340px;
         height: 99px;
         font-size: 19px;
     }
-    .porcentagemTexto{
+
+    .porcentagemTexto {
         display: flex;
         flex-direction: column;
         row-gap: 9px;
     }
-    .porcentagemTexto img{
+
+    .porcentagemTexto img {
         width: 340px;
         height: 255px;
     }
-    .porcentagemTexto div{
+
+    .porcentagemTexto div {
         width: 340px;
         height: 96px;
         font-size: 17px;
     }
-    .voltarHome{
+
+    .voltarHome {
         width: 219.64pxpx;
         height: 44px;
         font-size: 18px;
     }
-    .botaoReiniciar{
+
+    .botaoReiniciar {
         width: 219.64px;
         height: 44px;
         font-size: 18px;
     }
-    
+
 }

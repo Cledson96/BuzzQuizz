@@ -1,10 +1,11 @@
-let TodosQuizz = ""
+let TodosQuizz = "" ;
+puxarQuizz();
 function puxarQuizz() {
     const promessa = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes');
     promessa.then(adicionarQuizz);
     promessa.catch(erro);
 }
-puxarQuizz();
+
 function adicionarQuizz(ref) {
     TodosQuizz = ref.data;
 

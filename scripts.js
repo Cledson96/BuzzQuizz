@@ -23,10 +23,3 @@ function adicionarQuizz(ref) {
 function erro() {
     alert("Estamos com problema no servidor,favor tentar mais tarde!")
 }
-/*Aqui é uma função para alterar da página 1 para página 2*/
-function proximaPagina(){
-    let pagina1 = document.querySelector(".listaQuizz");
-    pagina1.classList.add("invisivel");
-    let nextpage = document.querySelector(".pagina2");
-    nextpage.classList.remove("invisivel");
-}

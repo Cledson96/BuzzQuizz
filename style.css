@@ -104,7 +104,7 @@ header {
     border-radius: 8px;
 }
 
-.resposta div {
+.emTexto {
     font-weight: 700;
     font-size: 20px;
     color: #000000;
@@ -172,6 +172,18 @@ header {
     align-items: center;    
 }
 /*Aqui é o fim do layout da página2*/
+/*classes utilizadas para deixar layout selecionado*/
+.naoSelecionado{
+    opacity:0.3;    
+}
+.naoSelecionado2{
+    color: #FF4B4B;
+    opacity:0.3;
+}
+.selecionado{
+    color: #009C22;
+}
+/*fim das classes utilizadas para deixar o layout selecionado*/
 
 .listaQuizz {
     max-width: 1090px;
@@ -331,7 +343,7 @@ input {
 
     .tema {
         max-width: 340px;
-    }
+    }    
     /*Ajustes para a página2*/
     header{
         width: 100%;
@@ -351,7 +363,7 @@ input {
         font-size: 19px;
     }
     .caixaDePergunta{
-        width: 375px;
+        width: 100%;
         height: 436px;
     }
     .respostas{
@@ -366,11 +378,11 @@ input {
     .pergunta{
         font-size: 19px;
     }
-    .resposta div{
+    .emTexto{
         font-size: 13px;
     }
     .porcentagemAcerto{
-        width: 375px;
+        width: 100%;
         height: 500px;
     }
     .porcentagem{

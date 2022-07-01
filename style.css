@@ -10,7 +10,6 @@
 .adiciona {
     display: flex;
 }
-
 body {
     background-color: #E5E5E5;
 }
@@ -34,8 +33,8 @@ header {
 /*Aqui dá inicio ao layout da página 2*/
 .pagina2 {
     width: 100%;
-
     flex-direction: column;
+    display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 69px;
@@ -141,8 +140,6 @@ header {
     margin-top: 21px;
 
 }
-
-
 .pergunta_1 img, .pergunta_2 img, .pergunta_3 img {
     width: 26px;
     height: 23px;
@@ -206,14 +203,9 @@ header {
 }
 
 .voltarHome {
-    width: 219.64px;
-    height: 44px;
     font-weight: 400;
     font-size: 21px;
-    color: #818181;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: #818181;     
 }
 
 /*Aqui é o fim do layout da página2*/
@@ -401,12 +393,7 @@ input {
 
     .tema {
         max-width: 340px;
-<<<<<<< HEAD
     }    
-=======
-    }
-
->>>>>>> a01977fbfa4402fd1970e2d7aeef0c2b6048dc1c
     /*Ajustes para a página2*/
     header {
         width: 100%;
@@ -429,14 +416,8 @@ input {
     .tituloDoQuizz div {
         font-size: 19px;
     }
-<<<<<<< HEAD
     .caixaDePergunta{
         width: 100%;
-=======
-
-    .caixaDePergunta {
-        width: 375px;
->>>>>>> a01977fbfa4402fd1970e2d7aeef0c2b6048dc1c
         height: 436px;
     }
 
@@ -454,21 +435,11 @@ input {
     .pergunta {
         font-size: 19px;
     }
-<<<<<<< HEAD
     .emTexto{
         font-size: 13px;
     }
     .porcentagemAcerto{
         width: 100%;
-=======
-
-    .resposta div {
-        font-size: 13px;
-    }
-
-    .porcentagemAcerto {
-        width: 375px;
->>>>>>> a01977fbfa4402fd1970e2d7aeef0c2b6048dc1c
         height: 500px;
     }
 

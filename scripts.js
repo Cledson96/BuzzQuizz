@@ -1,7 +1,7 @@
 let TodosQuizz = "" ;
 puxarQuizz();
 function puxarQuizz() {
-    const promessa = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes');
+    const promessa = axios.get('https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes');
     promessa.then(adicionarQuizz);
     promessa.catch(erro);
 }

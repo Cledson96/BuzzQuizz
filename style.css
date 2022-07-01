@@ -34,7 +34,7 @@ header {
 .pagina2 {
     width: 100%;
     flex-direction: column;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     margin-top: 69px;

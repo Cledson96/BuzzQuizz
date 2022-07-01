@@ -34,7 +34,7 @@ header {
 /*Aqui dá inicio ao layout da página 2*/
 .pagina2 {
     width: 100%;
- 
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -114,7 +114,25 @@ header {
     color: #000000;
     align-items: center;
 }
-.pergunta_1{
+
+.pergunta_1 {
+    width: 375px;
+    justify-content: space-between;
+    padding-left: 18px;
+    padding-right: 18px;
+    box-sizing: border-box;
+    margin-top: 21px;
+}
+
+.pergunta_2 {
+    width: 375px;
+    justify-content: space-between;
+    padding-left: 18px;
+    padding-right: 18px;
+    box-sizing: border-box;
+    margin-top: 21px;
+}
+.pergunta_3 {
     width: 375px;
     justify-content: space-between;
     padding-left: 18px;
@@ -123,10 +141,13 @@ header {
     margin-top: 21px;
 
 }
-.pergunta_1 img {
+
+
+.pergunta_1 img, .pergunta_2 img, .pergunta_3 img {
     width: 26px;
     height: 23px;
 }
+
 .porcentagemAcerto {
     width: 759px;
     height: 430px;
@@ -207,6 +228,11 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+button :hover {
+    box-shadow: 0 0 50px rgba(231, 28, 28, 0.938);
+
 }
 
 .criados button {
@@ -296,6 +322,7 @@ h2 {
     height: 100%;
     align-items: center;
     margin-top: 105px;
+    transition: all 1.0s ease;
 }
 
 .cadastro button {
@@ -336,6 +363,15 @@ input {
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
     border-radius: 5px;
+}
+
+.nivel {
+    margin-top: 15px;
+    padding-left: 18px;
+    padding-right: 18px;
+    width: 375px;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
 /* Pagina de cadastro */

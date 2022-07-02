@@ -206,5 +206,33 @@ function perguntasaparece(ref) {
 }
 
 function concluirCadastro() {
+    for (let i = 0; i < quantidade_niveis; i++) {
+        if (document.querySelector(".titulonivel" + i).value.length < 10){
+            alert("O titulo do nível deve possuir no minimo 10 caracteres!")
+            return
+        }
+        if (document.querySelector(".acertominimo" + i).value < 0 || document.querySelector(".acertominimo" + i).value > 100 || isNaN(document.querySelector(".acertominimo" + i).value) || document.querySelector(".acertominimo" + i).value === ""){
+            alert("A porcentagem deve ser um numero entre 0 a 100!")
+            return
+        }
+        try {
+            let url = new URL(document.querySelector(".URL_nivel" + i).value)
+            url_correta = true;
+
+        } catch (err) {
+            url_correta = false;
+
+        }
+        if (url_correta === false){
+            alert("A URL da imagem esta errada!!")
+            return
+        }
+        if (document.querySelector(".descricaonivel" + i).value.length < 30 ){
+            alert("A descrição exige no minimo 30 caracteres!!")
+            return
+        }
+
+        alert("concluido")
+    }
     
 }

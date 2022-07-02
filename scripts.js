@@ -1,9 +1,23 @@
 let TodosQuizz = "";
 let Titulo = "adsfsdfsdffsfsafsfsfsfgtrybtrytybtynu7nuimyui";
 let URl_imagem = "https://bootcampra.notion.site/API-BuzzQuizz-b3f0bdbcba6d4f65968971715c930e24";
-let quantidade_perguntas = "4";
+let quantidade_perguntas = "3";
 let quantidade_niveis = "2";
 let valida_url = false;
+
+let txt_pergunta = "";
+let cor_fundo = "";
+let txt_resposta = "";
+let url_resposta = "";
+let Resposta = 0
+
+
+
+let titulo_nivel = "";
+let acertos = "";
+let URL_nivel = false;
+let descricao_nivel = "";
+
 
 puxarQuizz();
 function puxarQuizz() {
@@ -38,22 +52,22 @@ function criarQuizz() {
 }
 function ir_perguntas() {
     //Titulo = document.querySelector(".titulo_quizz").value
-   // URl_imagem = document.querySelector(".url_img").value;
-  //  quantidade_perguntas = document.querySelector(".qtd_perguntas").value;
-//quantidade_niveis = document.querySelector(".qtd_niveis").value;
+    // URl_imagem = document.querySelector(".url_img").value;
+    //  quantidade_perguntas = document.querySelector(".qtd_perguntas").value;
+    //quantidade_niveis = document.querySelector(".qtd_niveis").value;
 
-    if (Titulo.length < 20 || Titulo.length > 65 ) {
+    if (Titulo.length < 20 || Titulo.length > 65) {
         alert("Seu titulo deve conter no minimo 20 caracteres e no maximo 65 caracteres");
         return
     }
     try {
         let url = new URL(URl_imagem)
         valida_url = true;
-      } catch(err) {
-          valida_url = false;
-      }
-    
-    if (valida_url === false ) {
+    } catch (err) {
+        valida_url = false;
+    }
+
+    if (valida_url === false) {
         alert("Sua URL da imagem esta invalido!");
         return
     }
@@ -62,7 +76,7 @@ function ir_perguntas() {
         alert("Obrigatório escolher no minimo três perguntas!");
         return
     }
-    if ( quantidade_niveis < 2) {
+    if (quantidade_niveis < 2) {
         alert("Obrigatório escolher no minimo dois niveis!");
         return
     }
@@ -73,36 +87,36 @@ function ir_perguntas() {
     console.log(quantidade_perguntas)
     console.log(quantidade_niveis)
 
-    for (let i = 0; i < quantidade_perguntas; i ++) {
+    for (let i = 0; i < quantidade_perguntas; i++) {
         document.querySelector(".perguntasquizz").innerHTML += ` <div onclick="perguntasaparece(this)" class="pergunta_1 adiciona ">
         <h1>Pergunta ${i + 1}</h1>
         <img src="/ArquivosDeMídia/editar.png">
     </div>
     <div class="perguntas p${i} invisivel">
         <h1>Pergunta ${i + 1}</h1>
-        <input type="text" placeholder="Texto da pergunta">
-        <input type="text" placeholder="Cor de fundo da pergunta">
+        <input class="txt_pergunta${i}" type="text" placeholder="Texto da pergunta">
+        <div class="input_color"> <span class="corzinha" > Cor de fundo da pergunta </span> <input class="cor${i}" type="color" placeholder="Cor de fundo da pergunta" / > </div>
 
         <h1>Resposta correta</h1>
-        <input type="text" placeholder="Resposta correta">
-        <input type="text" placeholder="URL da imagem">
+        <input class="respostacorreta${i} type="text" placeholder="Resposta correta">
+        <input class="urlcorreta${i} type="text" placeholder="URL da imagem">
 
         <h1>Respostas incorretas</h1>
-        <input type="text" placeholder="Resposta incorreta 1">
-        <input type="text" placeholder="URL da imagem 1">
+        <input class="respostaincorretaum${i} type="text" placeholder="Resposta incorreta 1">
+        <input class="urlincorretaum${i} type="text" placeholder="URL da imagem 1">
         <br />
-        <input type="text" placeholder="Resposta incorreta 2">
-        <input type="text" placeholder="URL da imagem 2">
+        <input class="respostaincorretadois${i} type="text" placeholder="Resposta incorreta 2">
+        <input class="urlincorretaum${i} type="text" placeholder="URL da imagem 2">
         <br />
-        <input type="text" placeholder="Resposta incorreta 3">
-        <input type="text" placeholder="URL da imagem 3">
+        <input class="respostaincorretatres${i} type="text" placeholder="Resposta incorreta 3">
+        <input class="urlincorretaum${i} type="text" placeholder="URL da imagem 3">
         <br />
 
 
     </div>`
     }
-    document.querySelector(".perguntasquizz").innerHTML += `<button onclick="ir_niveis()">Prosseguir pra criar níveis</button>` ;
-    
+    document.querySelector(".perguntasquizz").innerHTML += `<button onclick="ir_niveis()">Prosseguir pra criar níveis</button>`;
+
 
     document.querySelector(".info_basica").classList.add("invisivel");
     document.querySelector(".info_basica").classList.remove("adiciona");
@@ -111,18 +125,86 @@ function ir_perguntas() {
 
 }
 function ir_niveis() {
-        
+    for (let i = 0; i < quantidade_perguntas; i++) {
+        let cont_resp = 0;
+
+        if (document.querySelector(".txt_pergunta" + i).value.length < 20) {
+            alert("A pergunta tem que possuir no minimo 20 caracteres!")
+            return
+        }
+
+
+        if (document.querySelector(".respostacorreta" + i).value.length === 0) {
+            alert("A resposta não pode estar vazia!")
+            return
+        }
+
+        try {
+            let url = new URL(document.querySelector(".urlcorreta" + i).value)
+            url_correta = true;
+
+        } catch (err) {
+            url_correta = false;
+
+        }
+        try {
+            let url = new URL(document.querySelector(".urlincorretaum" + i).value)
+            url_incorreta = true;
+
+        } catch (err) {
+            url_incorreta = false;
+
+        }
+
+
+        if (url_correta === false) {
+            alert("A URL da imagem esta errado!")
+            return
+        }
+        if (url_incorreta === false) {
+            alert("A URL da imagem esta errado!")
+            return
+        }
+        if (document.querySelector(".respostacorreta" + i).value.length === 0) {
+            alert("A resposta não pode estar vazia!")
+            return
+        }
+        if (document.querySelector(".respostaincorretaum" + i).value.length === 0) {
+            alert("A resposta não pode estar vazia!")
+            return
+        }
+
+    }
+    for (let ii = 0; ii < quantidade_niveis; ii++) {
+        document.querySelector(".niveis").innerHTML += ` 
+        <div onclick="perguntasaparece(this)" class="pergunta_1 adiciona">
+            <h1>Nível ${ii+1}</h1>
+            <img src="/ArquivosDeMídia/editar.png">
+         </div>
+
+        <div class="nivel um invisivel">
+            <h1>Nível ${ii+1}</h1>
+            <input class="titulonivel${ii}" type="text" placeholder="Título do nível">
+            <input class="acertominimo${ii}" type="text" placeholder="% de acerto mínima">
+            <input class="URl_nivel${ii}" type="text" placeholder="URL da imagem do nível">
+            <input class="descricaonivel${ii}" type="text" placeholder="Descrição do nível">
+        </div>`
+    }
+    document.querySelector(".niveis").innerHTML += `<button onclick="concluirCadastro(this)">Finalizar Quizz</button>`
 
     document.querySelector(".perguntasquizz").classList.add("invisivel");
     document.querySelector(".perguntasquizz").classList.remove("adiciona");
     document.querySelector(".niveis").classList.add("adiciona");
     document.querySelector(".niveis").classList.remove("invisivel");
+
 }
 function perguntasaparece(ref) {
-    console.log(ref);
     ref.nextElementSibling.classList.toggle("invisivel");
-    console.log(ref.nextElementSibling)
     ref.nextElementSibling.classList.toggle("adiciona");
 
+    
+}
 
+function concluirCadastro() {
+    
 }

@@ -10,8 +10,34 @@
 .adiciona {
     display: flex;
 }
+
 body {
     background-color: #E5E5E5;
+}
+
+.corzinha {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    color:grey;
+    min-width: 80%;
+   
+}
+
+.input_color {
+    display: flex;
+    height: 47px;
+    justify-content: space-between;
+    border-width: 1px;
+    border-style:double;
+    border-radius: 5px;
+    border-color:rgb(209, 204, 204);
+   
+}
+.input_color input {
+   height: 90%;
+   width: 90%;
+   
 }
 
 header {
@@ -131,6 +157,7 @@ header {
     box-sizing: border-box;
     margin-top: 21px;
 }
+
 .pergunta_3 {
     width: 375px;
     justify-content: space-between;
@@ -140,7 +167,10 @@ header {
     margin-top: 21px;
 
 }
-.pergunta_1 img, .pergunta_2 img, .pergunta_3 img {
+
+.pergunta_1 img,
+.pergunta_2 img,
+.pergunta_3 img {
     width: 26px;
     height: 23px;
 }
@@ -205,21 +235,24 @@ header {
 .voltarHome {
     font-weight: 400;
     font-size: 21px;
-    color: #818181;     
+    color: #818181;
 }
 
 /*Aqui é o fim do layout da página2*/
 /*classes utilizadas para deixar layout selecionado*/
-.naoSelecionado{
-    opacity:0.3;    
+.naoSelecionado {
+    opacity: 0.3;
 }
-.naoSelecionado2{
+
+.naoSelecionado2 {
     color: #FF4B4B;
-    opacity:0.3;
+    opacity: 0.3;
 }
-.selecionado{
+
+.selecionado {
     color: #009C22;
 }
+
 /*fim das classes utilizadas para deixar o layout selecionado*/
 
 .listaQuizz {
@@ -393,7 +426,8 @@ input {
 
     .tema {
         max-width: 340px;
-    }    
+    }
+
     /*Ajustes para a página2*/
     header {
         width: 100%;
@@ -416,7 +450,8 @@ input {
     .tituloDoQuizz div {
         font-size: 19px;
     }
-    .caixaDePergunta{
+
+    .caixaDePergunta {
         width: 100%;
         height: 436px;
     }
@@ -435,10 +470,12 @@ input {
     .pergunta {
         font-size: 19px;
     }
-    .emTexto{
+
+    .emTexto {
         font-size: 13px;
     }
-    .porcentagemAcerto{
+
+    .porcentagemAcerto {
         width: 100%;
         height: 500px;
     }

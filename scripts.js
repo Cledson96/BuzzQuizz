@@ -73,8 +73,35 @@ function ir_perguntas() {
     console.log(quantidade_perguntas)
     console.log(quantidade_niveis)
 
-    //for (let i = 0; i < quantidade_perguntas; i ++) {
-       // document.querySelector(".perguntasquizz").innerHTML =+ ``
+    for (let i = 0; i < quantidade_perguntas; i ++) {
+        document.querySelector(".perguntasquizz").innerHTML += ` <div onclick="perguntasaparece(this)" class="pergunta_1 adiciona ">
+        <h1>Pergunta ${i + 1}</h1>
+        <img src="/ArquivosDeMídia/editar.png">
+    </div>
+    <div class="perguntas p${i} invisivel">
+        <h1>Pergunta ${i + 1}</h1>
+        <input type="text" placeholder="Texto da pergunta">
+        <input type="text" placeholder="Cor de fundo da pergunta">
+
+        <h1>Resposta correta</h1>
+        <input type="text" placeholder="Resposta correta">
+        <input type="text" placeholder="URL da imagem">
+
+        <h1>Respostas incorretas</h1>
+        <input type="text" placeholder="Resposta incorreta 1">
+        <input type="text" placeholder="URL da imagem 1">
+        <br />
+        <input type="text" placeholder="Resposta incorreta 2">
+        <input type="text" placeholder="URL da imagem 2">
+        <br />
+        <input type="text" placeholder="Resposta incorreta 3">
+        <input type="text" placeholder="URL da imagem 3">
+        <br />
+
+
+    </div>`
+    }
+    document.querySelector(".perguntasquizz").innerHTML += `<button onclick="ir_niveis()">Prosseguir pra criar níveis</button>` ;
     
 
     document.querySelector(".info_basica").classList.add("invisivel");
@@ -84,6 +111,8 @@ function ir_perguntas() {
 
 }
 function ir_niveis() {
+        
+
     document.querySelector(".perguntasquizz").classList.add("invisivel");
     document.querySelector(".perguntasquizz").classList.remove("adiciona");
     document.querySelector(".niveis").classList.add("adiciona");
@@ -91,9 +120,9 @@ function ir_niveis() {
 }
 function perguntasaparece(ref) {
     console.log(ref);
-    ref.nextElementSibling.classList.remove("invisivel");
+    ref.nextElementSibling.classList.toggle("invisivel");
     console.log(ref.nextElementSibling)
-    ref.nextElementSibling.classList.add("adiciona");
+    ref.nextElementSibling.classList.toggle("adiciona");
 
 
 }

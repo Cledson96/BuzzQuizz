@@ -1,8 +1,8 @@
 let TodosQuizz = "";
-let Titulo = "adsfsdfsdffsfsafsfsfsfgtrybtrytybtynu7nuimyui";
-let URl_imagem = "https://bootcampra.notion.site/API-BuzzQuizz-b3f0bdbcba6d4f65968971715c930e24";
-let quantidade_perguntas = "3";
-let quantidade_niveis = "2";
+let Titulo = "";
+let URl_imagem = "";
+let quantidade_perguntas = "";
+let quantidade_niveis = "";
 let valida_url = false;
 
 let txt_pergunta = "";
@@ -11,7 +11,7 @@ let txt_resposta = "";
 let url_resposta = "";
 let Resposta = 0
 
-
+let enviar_quizz = {};
 
 let titulo_nivel = "";
 let acertos = "";
@@ -51,10 +51,10 @@ function criarQuizz() {
     document.querySelector(".info_basica").classList.remove("invisivel");
 }
 function ir_perguntas() {
-    //Titulo = document.querySelector(".titulo_quizz").value
-    // URl_imagem = document.querySelector(".url_img").value;
-    //  quantidade_perguntas = document.querySelector(".qtd_perguntas").value;
-    //quantidade_niveis = document.querySelector(".qtd_niveis").value;
+    Titulo = document.querySelector(".titulo_quizz").value
+    URl_imagem = document.querySelector(".url_img").value;
+     quantidade_perguntas = document.querySelector(".qtd_perguntas").value;
+    quantidade_niveis = document.querySelector(".qtd_niveis").value;
 
     if (Titulo.length < 20 || Titulo.length > 65) {
         alert("Seu titulo deve conter no minimo 20 caracteres e no maximo 65 caracteres");
@@ -232,7 +232,10 @@ function concluirCadastro() {
             return
         }
 
-        alert("concluido")
     }
+    document.querySelector(".niveis").classList.add("invisivel");
+    document.querySelector(".niveis").classList.remove("adiciona");
+    document.querySelector(".quizz_pronto").classList.add("adiciona");
+    document.querySelector(".quizz_pronto").classList.remove("invisivel");
     
 }

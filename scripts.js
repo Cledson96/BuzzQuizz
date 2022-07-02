@@ -81,8 +81,10 @@ function ir_perguntas() {
         return
     }
 
-
-    console.log(Titulo)
+    enviar_quizz.title = Titulo;
+    enviar_quizz.image= URl_imagem;
+    
+    console.log(enviar_quizz)
     console.log(URl_imagem)
     console.log(quantidade_perguntas)
     console.log(quantidade_niveis)

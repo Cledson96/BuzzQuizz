@@ -94,10 +94,10 @@
     <div class="cadastro info_basica invisivel">
         <h1>Comece pelo começo</h1>
         <div class="perguntas adiciona">
-            <input type="text" placeholder="Título do seu quizz">
-            <input type="text" placeholder="URL da imagem do seu quizz">
-            <input type="text" placeholder="Quantidade de perguntas do quizz">
-            <input type="text" placeholder="Quantidade de níveis do quizz">
+            <input class="titulo_quizz" type="text" placeholder="Título do seu quizz">
+            <input class="URL_img" type="url" placeholder="URL da imagem do seu quizz">
+            <input class="QTD_perguntas" type="text" placeholder="Quantidade de perguntas do quizz">
+            <input class="QTD_niveis" type="text" placeholder="Quantidade de níveis do quizz">
         </div>
         <button onclick="ir_perguntas()"> Prosseguir pra criar perguntas </button>
 
@@ -108,7 +108,7 @@
     <div class=" cadastro perguntasquizz invisivel">
             <h1>Crie suas perguntas</h1>
 
-            <div class="pergunta_1 invisivel">
+            <div onclick="perguntasaparece(this)" class="pergunta_1 invisivel">
                 <h1>Pergunta 1</h1>
                 <img src="/ArquivosDeMídia/editar.png">
             </div>
@@ -134,7 +134,7 @@
 
 
             </div>
-            <div class="pergunta_2 adiciona">
+            <div onclick="perguntasaparece(this)" class="pergunta_1 adiciona">
                 <h1>Pergunta 2</h1>
                 <img src="/ArquivosDeMídia/editar.png">
             </div>
@@ -160,7 +160,7 @@
 
 
             </div>
-            <div class="pergunta_3 adiciona">
+            <div onclick="perguntasaparece(this)" class="pergunta_1 adiciona">
                 <h1>Pergunta 3</h1>
                 <img src="/ArquivosDeMídia/editar.png">
             </div>

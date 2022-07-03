@@ -12,6 +12,7 @@ let url_resposta = "";
 let Resposta = 0
 
 let enviar_quizz = {};
+let Tdsperguntas = [];
 
 let titulo_nivel = "";
 let acertos = "";
@@ -53,7 +54,7 @@ function criarQuizz() {
 function ir_perguntas() {
     Titulo = document.querySelector(".titulo_quizz").value
     URl_imagem = document.querySelector(".url_img").value;
-     quantidade_perguntas = document.querySelector(".qtd_perguntas").value;
+    quantidade_perguntas = document.querySelector(".qtd_perguntas").value;
     quantidade_niveis = document.querySelector(".qtd_niveis").value;
 
     if (Titulo.length < 20 || Titulo.length > 65) {
@@ -82,8 +83,8 @@ function ir_perguntas() {
     }
 
     enviar_quizz.title = Titulo;
-    enviar_quizz.image= URl_imagem;
-    
+    enviar_quizz.image = URl_imagem;
+
     console.log(enviar_quizz)
     console.log(URl_imagem)
     console.log(quantidade_perguntas)
@@ -108,12 +109,11 @@ function ir_perguntas() {
         <input class="urlincorretaum${i} type="text" placeholder="URL da imagem 1">
         <br />
         <input class="respostaincorretadois${i} type="text" placeholder="Resposta incorreta 2">
-        <input class="urlincorretaum${i} type="text" placeholder="URL da imagem 2">
+        <input class="urlincorretadois${i} type="text" placeholder="URL da imagem 2">
         <br />
         <input class="respostaincorretatres${i} type="text" placeholder="Resposta incorreta 3">
-        <input class="urlincorretaum${i} type="text" placeholder="URL da imagem 3">
+        <input class="urlincorretatres${i} type="text" placeholder="URL da imagem 3">
         <br />
-
 
     </div>`
     }
@@ -160,11 +160,11 @@ function ir_niveis() {
 
 
         if (url_correta === false) {
-            alert("A URL da imagem esta errado!")
+            alert("A URL da imagem da resposta correta esta errado!")
             return
         }
         if (url_incorreta === false) {
-            alert("A URL da imagem esta errado!")
+            alert("A URL da imagem da respoata incorreta esta errado!")
             return
         }
         if (document.querySelector(".respostacorreta" + i).value.length === 0) {
@@ -175,17 +175,67 @@ function ir_niveis() {
             alert("A resposta não pode estar vazia!")
             return
         }
+        Tdsperguntas[i] = {};   
+        Tdsperguntas[i].title = document.querySelector(".txt_pergunta" + i).value;
+        Tdsperguntas[i].color = document.querySelector(".cor" + i).value;
+        Tdsperguntas[i].answers = [{},{}];
+        Tdsperguntas[i].answers[0].text = document.querySelector(".respostacorreta" + i).value;
+        Tdsperguntas[i].answers[0].image = document.querySelector(".urlcorreta" + i).value;
+        Tdsperguntas[i].answers[0].isCorrectAnswer = true;
+        Tdsperguntas[i].answers[1].text = document.querySelector(".respostaincorretaum" + i).value;
+        Tdsperguntas[i].answers[1].image = document.querySelector(".urlincorretaum" + i).value;
+        Tdsperguntas[i].answers[1].isCorrectAnswer = false;
 
+        if (document.querySelector(".respostaincorretadois" + i).value.length != 0) {
+            try {
+                let url = new URL(document.querySelector(".urlincorretadois" + i).value)
+                url_incorretadois = true;
+    
+            } catch (err) {
+                url_incorretadois = false;
+            }
+            if(url_incorretadois === false) {
+                alert("A URL da imagem esta errado!" + "Resposta errada dois" + i )
+                return
+            }
+            Tdsperguntas[i].answers[2] = {};
+            Tdsperguntas[i].answers[2].text = document.querySelector(".respostaincorretadois" + i).value;
+            Tdsperguntas[i].answers[2].image = document.querySelector(".urlincorretadois" + i).value;
+            Tdsperguntas[i].answers[2].isCorrectAnswer = false;
+
+        }
+        if (document.querySelector(".respostaincorretatres" + i).value.length != 0) {
+            try {
+                let url = new URL(document.querySelector(".urlincorretatres" + i).value)
+                url_incorretatres = true;
+    
+            } catch (err) {
+                url_incorretatres = false;
+            }
+            if(url_incorretatres == false) {
+                alert("A URL da imagem esta errado!" + "Resposta errada tres" + i)
+                return
+            }
+            Tdsperguntas[i].answers[3] = {};
+            Tdsperguntas[i].answers[3].text = document.querySelector(".respostaincorretatres" + i).value;
+            Tdsperguntas[i].answers[3].image = document.querySelector(".urlincorretatres" + i).value;
+            Tdsperguntas[i].answers[3].isCorrectAnswer = false;
+
+        }
+        console.log(Tdsperguntas);
+        enviar_quizz.questions = Tdsperguntas;
+        console.log(enviar_quizz);
     }
+
     for (let ii = 0; ii < quantidade_niveis; ii++) {
         document.querySelector(".niveis").innerHTML += ` 
         <div onclick="perguntasaparece(this)" class="pergunta_1 adiciona">
-            <h1>Nível ${ii+1}</h1>
+            <h1>Nível ${ii + 1}</h1>
             <img src="/ArquivosDeMídia/editar.png">
          </div>
 
         <div class="nivel um invisivel">
-            <h1>Nível ${ii+1}</h1>
+            <h1>Nível ${ii + 1}</h1>
             <input class="titulonivel${ii}" type="text" placeholder="Título do nível">
             <input class="acertominimo${ii}" type="text" placeholder="% de acerto mínima">
             <input class="URl_nivel${ii}" type="text" placeholder="URL da imagem do nível">
@@ -204,16 +254,16 @@ function perguntasaparece(ref) {
     ref.nextElementSibling.classList.toggle("invisivel");
     ref.nextElementSibling.classList.toggle("adiciona");
 
-    
+
 }
 
 function concluirCadastro() {
     for (let i = 0; i < quantidade_niveis; i++) {
-        if (document.querySelector(".titulonivel" + i).value.length < 10){
+        if (document.querySelector(".titulonivel" + i).value.length < 10) {
             alert("O titulo do nível deve possuir no minimo 10 caracteres!")
             return
         }
-        if (document.querySelector(".acertominimo" + i).value < 0 || document.querySelector(".acertominimo" + i).value > 100 || isNaN(document.querySelector(".acertominimo" + i).value) || document.querySelector(".acertominimo" + i).value === ""){
+        if (document.querySelector(".acertominimo" + i).value < 0 || document.querySelector(".acertominimo" + i).value > 100 || isNaN(document.querySelector(".acertominimo" + i).value) || document.querySelector(".acertominimo" + i).value === "") {
             alert("A porcentagem deve ser um numero entre 0 a 100!")
             return
         }
@@ -225,11 +275,11 @@ function concluirCadastro() {
             url_correta = false;
 
         }
-        if (url_correta === false){
+        if (url_correta === false) {
             alert("A URL da imagem esta errada!!")
             return
         }
-        if (document.querySelector(".descricaonivel" + i).value.length < 30 ){
+        if (document.querySelector(".descricaonivel" + i).value.length < 30) {
             alert("A descrição exige no minimo 30 caracteres!!")
             return
         }
@@ -239,5 +289,5 @@ function concluirCadastro() {
     document.querySelector(".niveis").classList.remove("adiciona");
     document.querySelector(".quizz_pronto").classList.add("adiciona");
     document.querySelector(".quizz_pronto").classList.remove("invisivel");
-    
+
 }

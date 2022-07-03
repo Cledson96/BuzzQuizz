@@ -19,9 +19,9 @@ body {
     display: flex;
     height: 100%;
     align-items: center;
-    color:grey;
+    color: grey;
     min-width: 80%;
-   
+
 }
 
 .input_color {
@@ -29,15 +29,16 @@ body {
     height: 47px;
     justify-content: space-between;
     border-width: 1px;
-    border-style:double;
+    border-style: double;
     border-radius: 5px;
-    border-color:rgb(209, 204, 204);
-   
+    border-color: rgb(209, 204, 204);
+
 }
+
 .input_color input {
-   height: 90%;
-   width: 90%;
-   
+    height: 90%;
+    width: 90%;
+
 }
 
 header {
@@ -400,6 +401,21 @@ input {
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
     border-radius: 5px;
+}
+
+.quizz_pronto {
+    margin-top: 150px;
+}
+
+.voltar {
+    margin-top: 15px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #818181;
+
 }
 
 .nivel {

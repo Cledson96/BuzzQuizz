@@ -13,7 +13,9 @@ let Resposta = 0
 
 let enviar_quizz = {};
 let Tdsperguntas = [];
-
+let Tdslevels = [];
+let nivel0 = [];
+let verifica = 0;
 let titulo_nivel = "";
 let acertos = "";
 let URL_nivel = false;
@@ -243,7 +245,6 @@ function ir_niveis() {
         </div>`
     }
     document.querySelector(".niveis").innerHTML += `<button onclick="concluirCadastro(this)">Finalizar Quizz</button>`
-
     document.querySelector(".perguntasquizz").classList.add("invisivel");
     document.querySelector(".perguntasquizz").classList.remove("adiciona");
     document.querySelector(".niveis").classList.add("adiciona");
@@ -283,11 +284,54 @@ function concluirCadastro() {
             alert("A descrição exige no minimo 30 caracteres!!")
             return
         }
-
+        nivel0[i] = document.querySelector(".acertominimo" + i).value;
+        Tdslevels[i] = {};   
+        Tdslevels[i].title = document.querySelector(".URL_nivel" + i).value;
+        Tdslevels[i].image = document.querySelector(".cor" + i).value;
+        Tdslevels[i].text = document.querySelector(".descricaonivel" + i).value;
+        Tdslevels[i].minValue = document.querySelector(".acertominimo" + i).value;
+        
     }
+    for (let iii=0; iii<nivel0.length; iii++) {
+        if(nivel0[iii] == 0) {
+            verifica = 1;
+        }
+    }
+
+    if (verifica != 1) {
+        alert("Obrigatório um dos niveis ter acerto minimo 0!")
+        return
+    }
+
+    console.log(Tdslevels);
+    enviar_quizz.levels = Tdslevels ;
+    console.log (enviar_quizz);
     document.querySelector(".niveis").classList.add("invisivel");
     document.querySelector(".niveis").classList.remove("adiciona");
     document.querySelector(".quizz_pronto").classList.add("adiciona");
     document.querySelector(".quizz_pronto").classList.remove("invisivel");
+    const promessa = axios.post('https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes', enviar_quizz);
+    promessa.then(enviar);
+    promessa.catch(erro);
 
+    document.querySelector(".quizz_pronto").innerHTML += ` 
+            <div class="tema">
+                <img src=${enviar_quizz.image}>
+                <p class="TituloQuizz">${enviar_quizz.title}</p>
+            </div>
+            <button onclick="Acessar_Quizz()">Acessar Quizz</button>
+            <p onclick="reiniciar()" class="Voltar">Voltar pra home</p>
+            `
+
+}
+function reiniciar(){
+    window.location.reload();
+}
+
+
+
+
+
+function enviar(){
+alert("deu boa")
 }

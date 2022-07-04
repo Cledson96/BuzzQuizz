@@ -34,9 +34,9 @@ function adicionarQuizz(ref) {
     TodosQuizz = ref.data;
     if (lista_criado.length > 0) {
         document.querySelector(".criados").innerHTML = 
-        `<div onclick="criarQuizz()" class="criaquizz2">
+        `<div class="criaquizz2">
             <h1>Seus Quizzes</h1>
-            <img src="/ArquivosDeMídia/Rectangle 33.png">
+            <img onclick="criarQuizz()" src="/ArquivosDeMídia/Rectangle 33.png">
         </div> 
         <div class="oscriados"> 
         </div>`
@@ -49,15 +49,19 @@ function adicionarQuizz(ref) {
             let SeuQuiz = document.querySelector(".oscriados");
             SeuQuiz.innerHTML += 
             `<div onclick="proximaPagina(this)" class="tema id${TodosQuizz[i].id}">
+                    <div class="veu"> 
+                    <p class="TituloQuizz">${TodosQuizz[i].title}</p></div>
                  <img src=${TodosQuizz[i].image}>
-                 <p class="TituloQuizz">${TodosQuizz[i].title}</p>
+                 
             </div>`
         } else {
         let caixa = document.querySelector(".todos");
         caixa.innerHTML +=
             `<div onclick="proximaPagina(this)" class="tema id${TodosQuizz[i].id}">
+            <div class="veu"> 
+            <p class="TituloQuizz">${TodosQuizz[i].title}</p></div>
                 <img src=${TodosQuizz[i].image}>
-                <p class="TituloQuizz">${TodosQuizz[i].title}</p>
+                
             </div>`
         }
     }

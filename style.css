@@ -337,7 +337,13 @@ h2 {
     color: #B9B9B9;
 
 }
-
+.veu{
+    position:absolute;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 10;
+    background: linear-gradient(to bottom, rgba(255,0,0,0) 0%,rgb(5, 5, 5) 100%);
+}
 .tema {
     display: flex;
     justify-content: center;
@@ -346,6 +352,8 @@ h2 {
     position: relative;
     margin-right: 15px;
     margin-bottom: 12px;
+    position: relative;
+    
 }
 
 .tema :hover {
@@ -363,6 +371,7 @@ h2 {
 }
 
 .TituloQuizz {
+    min-width: 100%;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -456,6 +465,12 @@ input {
     }
     .criaquizz2 {
         justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 37px;
+        box-sizing: border-box;
+    }
+    .tdsquiz{
+        margin-left: 20px;
     }
 
     .todos {

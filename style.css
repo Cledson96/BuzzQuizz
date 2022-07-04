@@ -10,10 +10,51 @@
 .adiciona {
     display: flex;
 }
+
 body {
     background-color: #E5E5E5;
 }
 
+.corzinha {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    color: grey;
+    min-width: 80%;
+
+}
+
+.input_color {
+    display: flex;
+    height: 47px;
+    justify-content: space-between;
+    border-width: 1px;
+    border-style: double;
+    border-radius: 5px;
+    border-color: rgb(209, 204, 204);
+
+}
+
+.input_color input {
+    height: 90%;
+    width: 90%;
+
+}
+.criaquizz2{
+    display: flex;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 30px;
+    align-items: center;
+    text-align: center;
+}
+.criaquizz2 h1 {
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+   margin: auto 0;
+   margin-right: 15px;
+}
 header {
     width: 100vw;
     height: 69px;
@@ -27,14 +68,14 @@ header {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     position: fixed;
     top: 0;
-    z-index: 10;
+    z-index: 100;
 }
 
 /*Aqui dá inicio ao layout da página 2*/
 .pagina2 {
     width: 100%;
     flex-direction: column;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     margin-top: 69px;
@@ -132,6 +173,7 @@ header {
     box-sizing: border-box;
     margin-top: 21px;
 }
+
 .pergunta_3 {
     width: 375px;
     justify-content: space-between;
@@ -141,7 +183,10 @@ header {
     margin-top: 21px;
 
 }
-.pergunta_1 img, .pergunta_2 img, .pergunta_3 img {
+
+.pergunta_1 img,
+.pergunta_2 img,
+.pergunta_3 img {
     width: 26px;
     height: 23px;
 }
@@ -206,21 +251,24 @@ header {
 .voltarHome {
     font-weight: 400;
     font-size: 21px;
-    color: #818181;     
+    color: #818181;
 }
 
 /*Aqui é o fim do layout da página2*/
 /*classes utilizadas para deixar layout selecionado*/
-.naoSelecionado{
-    opacity:0.3;    
+.naoSelecionado {
+    opacity: 0.3;
 }
-.naoSelecionado2{
+
+.naoSelecionado2 {
     color: #FF4B4B;
-    opacity:0.3;
+    opacity: 0.3;
 }
-.selecionado{
+
+.selecionado {
     color: #009C22;
 }
+
 /*fim das classes utilizadas para deixar o layout selecionado*/
 
 .listaQuizz {
@@ -262,6 +310,12 @@ button :hover {
     min-height: 182px;
     width: 100%;
 }
+.oscriados{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 182px;
+    width: 100%;
+}
 
 h1 {
     font-family: 'Roboto';
@@ -284,7 +338,13 @@ h2 {
     color: #B9B9B9;
 
 }
-
+.veu{
+    position:absolute;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 8;
+    background: linear-gradient(to bottom, rgba(255,0,0,0) 0%,rgb(5, 5, 5) 100%);
+}
 .tema {
     display: flex;
     justify-content: center;
@@ -293,6 +353,8 @@ h2 {
     position: relative;
     margin-right: 15px;
     margin-bottom: 12px;
+    position: relative;
+    
 }
 
 .tema :hover {
@@ -310,6 +372,7 @@ h2 {
 }
 
 .TituloQuizz {
+    min-width: 100%;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -370,6 +433,21 @@ input {
     border-radius: 5px;
 }
 
+.quizz_pronto {
+    margin-top: 150px;
+}
+
+.voltar {
+    margin-top: 15px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #818181;
+
+}
+
 .nivel {
     margin-top: 15px;
     padding-left: 18px;
@@ -386,15 +464,29 @@ input {
     .listaQuizz {
         max-width: 400px;
     }
+    .criaquizz2 {
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 37px;
+        box-sizing: border-box;
+    }
+    .tdsquiz{
+        margin-left: 20px;
+    }
 
     .todos {
+        display: flex;
+        justify-content: center;
+    }
+    .oscriados{
         display: flex;
         justify-content: center;
     }
 
     .tema {
         max-width: 340px;
-    }    
+    }
+
     /*Ajustes para a página2*/
     header {
         width: 100%;
@@ -417,7 +509,8 @@ input {
     .tituloDoQuizz div {
         font-size: 19px;
     }
-    .caixaDePergunta{
+
+    .caixaDePergunta {
         width: 100%;
         height: 436px;
     }
@@ -436,10 +529,12 @@ input {
     .pergunta {
         font-size: 19px;
     }
-    .emTexto{
+
+    .emTexto {
         font-size: 13px;
     }
-    .porcentagemAcerto{
+
+    .porcentagemAcerto {
         width: 100%;
         height: 500px;
     }

@@ -1,0 +1,138 @@
+<head>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="Buzz Quizz Game" />
+    <title>Buzz Quizz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>BuzzQuizz</header>
+    <!-- Tela 1-->
+    <div class="listaQuizz ">
+        <div class="quizz criados">
+            <h2>Você não criou nenhum quizz ainda :(</h2>
+            <button onclick="criarQuizz()">Criar Quizz</button>
+        
+        </div>
+        <h1 class="tdsquiz">Todos os Quizzes</h1>
+        <div class="quizz todos"></div>
+    </div>
+    <!-- Tela 1-->
+    <!-- Página 2 -->
+    <!-- Ajustes finais:
+        Adicionar degradê da imagem
+        Tentar arrumar a responssividade da caixaDePergunta        
+    -->     
+    <div class="pagina2">
+        <div class="tituloDoQuizz">
+            <img src="ArquivosDeMídia/ImagemTeste.jpeg">
+            <div>Título do quizz</div>
+        </div>
+        <div class="caixaDePergunta">
+            <div class="pergunta">Aqui vai a sua pergunta</div>
+            <div class="respostas">
+                <div class="resposta" onclick="selecionarAlternativa(this)">
+                    <img src="ArquivosDeMídia/ImagemTeste.jpeg">
+                    <div class="emTexto">Resposta em texto</div>
+                </div>
+                <div class="resposta" onclick="selecionarAlternativa(this)">
+                    <img src="ArquivosDeMídia/ImagemTeste.jpeg">
+                    <div class="emTexto">Resposta em texto</div>
+                </div>
+                <div class="resposta" onclick="selecionarAlternativa(this)">
+                    <img src="ArquivosDeMídia/ImagemTeste.jpeg">
+                    <div class="emTexto">Resposta em texto</div>
+                </div>
+                <div class="resposta" onclick="selecionarAlternativa(this)">
+                    <img src="ArquivosDeMídia/ImagemTeste.jpeg">
+                    <div class="emTexto">Resposta em texto</div>
+                </div>
+            </div>
+        </div>
+        <div class="caixaDePergunta">
+            <div class="pergunta">Aqui vai a sua pergunta</div>
+            <div class="respostas">
+                <div class="resposta" onclick="selecionarAlternativa(this)">
+                    <img src="ArquivosDeMídia/ImagemTeste.jpeg">
+                    <div class="emTexto">Resposta em texto</div>
+                </div>
+                <div class="resposta" onclick="selecionarAlternativa(this)">
+                    <img src="ArquivosDeMídia/ImagemTeste.jpeg">
+                    <div class="emTexto">Resposta em texto</div>
+                </div>
+                <div class="resposta" onclick="selecionarAlternativa(this)">
+                    <img src="ArquivosDeMídia/ImagemTeste.jpeg">
+                    <div class="emTexto">Resposta em texto</div>
+                </div>
+                <div class="resposta" onclick="selecionarAlternativa(this)">
+                    <img src="ArquivosDeMídia/ImagemTeste.jpeg">
+                    <div class="emTexto">Resposta em texto</div>
+                </div>
+            </div>
+        </div>
+        <!--Caixa de porcentagem de acerto-->
+        <div class="porcentagemAcerto">
+            <div class="porcentagem">Aqui vai a porcentagem de acerto</div>
+            <div class="porcentagemTexto">
+                <img src="ArquivosDeMídia/ImagemTeste.jpeg">
+                <div>texto texto texto texto texto texto texto texto texto texto texto texto texto</div>
+            </div>
+        </div>
+        <!--Botão Reiniciar Quizz-->
+        <div class="botaoReiniciar"><div class="textoReiniciar">Reiniciar Quizz</div></div>
+        <!--Voltar para home-->
+        <div class="voltarHome">Voltar para home</div>
+    </div>  
+    <!--Fim da página2-->
+
+    <!--Criando Quiz parte 1-->
+    <div class="cadastro info_basica invisivel">
+        <h1>Comece pelo começo</h1>
+        <div class="perguntas adiciona">
+            <input class="titulo_quizz" type="text" placeholder="Título do seu quizz">
+            <input class="URL_img" type="url" placeholder="URL da imagem do seu quizz">
+            <input class="QTD_perguntas" type="text" placeholder="Quantidade de perguntas do quizz">
+            <input class="QTD_niveis" type="text" placeholder="Quantidade de níveis do quizz">
+        </div>
+        <button onclick="ir_perguntas()"> Prosseguir pra criar perguntas </button>
+
+    </div> ;
+    <!--Criando Quiz parte 1-->
+
+    <!--Criando Quiz parte 2-->
+    <div class=" cadastro perguntasquizz invisivel">
+            <h1>Crie suas perguntas</h1>
+
+           
+
+    </div>
+    <!--Criando Quiz parte 2-->
+
+    <!--Criando Quiz parte 3-->
+    <div class="cadastro niveis invisivel">
+        <h1>Agora, decida os níveis</h1>
+
+        
+        
+
+    </div>
+    <div class="cadastro quizz_pronto invisivel">
+        <h1>Seu quizz está pronto!</h1>
+
+        
+        
+
+    </div>
+
+
+    <!--Criando Quiz parte 3-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script-anelize.js"></script>
+    <script src="scripts.js"></script>
+</body>

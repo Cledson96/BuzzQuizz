@@ -76,7 +76,8 @@ function adicionarQuizz(ref) {
         } else {
         let caixa = document.querySelector(".todos");
         caixa.innerHTML +=
-            `<div onclick="proximaPagina(this)" class="tema ${TodosQuizz[i].id}">
+            //`<div onclick="proximaPagina(${i})" class="tema"> //Se usar esse a funcao proxima pagina vai ser ativada
+            `<div onclick="proximaPagina(${i})" class="tema id${TodosQuizz[i].id}">
             <div class="veu"> 
             <p class="TituloQuizz">${TodosQuizz[i].title}</p></div>
                 <img class="img_servidor" src=${TodosQuizz[i].image}>

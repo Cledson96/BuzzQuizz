@@ -98,7 +98,7 @@ header {
 .pagina2 {
     width: 100%;
     flex-direction: column;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 69px;
@@ -122,28 +122,34 @@ header {
     position: absolute;
     z-index: 1;
 }
-
+.escurecido{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    z-index: 2;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57));
+}
 .tituloDoQuizz div {
     font-weight: 400;
     font-size: 39px;
     color: #ffffff;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
 }
-
 .caixaDePergunta {
     width: 759px;
-    height: 670px;
+    height: auto;
     background-color: #ffffff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 16px;
 }
 
 .pergunta {
     width: 90%;
-    height: 20%;
+    height: 100px;
     background-color: #434CA0;
     display: flex;
     justify-content: center;
@@ -152,11 +158,12 @@ header {
     font-size: 23px;
     color: #ffffff;
     margin-top: 27.91px;
+    padding: 5%;
 }
 
 .respostas {
     width: 90%;
-    height: 20%;
+    height: auto;
     margin-top: 20.16px;
     display: flex;
     flex-wrap: wrap;
@@ -164,18 +171,24 @@ header {
     column-gap: 24.29px;
     row-gap: 18.61px;
 }
-
-.resposta img {
-    width: 320px;
-    height: 173px;
-    border-radius: 8px;
+.resposta{
+    width: 45%;
+    height: auto;
 }
 
-.emTexto {
+.resposta img {
+    width: 86%;
+    height: 75%;
+    border-radius: 8px;
+    background-size: cover;
+}
+
+.emTexto {    
     font-weight: 700;
     font-size: 20px;
     color: #000000;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .pergunta_1 {
@@ -542,7 +555,7 @@ input {
 
     .caixaDePergunta {
         width: 100%;
-        height: 436px;
+        height: auto;
     }
 
     .respostas {
@@ -570,24 +583,25 @@ input {
     }
 
     .porcentagem {
-        width: 340px;
+        width: 90%;
         height: 99px;
         font-size: 19px;
-    }
+            }
 
     .porcentagemTexto {
+        width: 90%;
         display: flex;
         flex-direction: column;
         row-gap: 9px;
     }
 
     .porcentagemTexto img {
-        width: 340px;
+        width: 100%;
         height: 255px;
     }
 
     .porcentagemTexto div {
-        width: 340px;
+        width: 90%;
         height: 96px;
         font-size: 17px;
     }

@@ -20,7 +20,8 @@ let titulo_nivel = "";
 let acertos = "";
 let URL_nivel = false;
 let descricao_nivel = "";
-
+let id_criado = "";
+let lista_criado = localStorage;
 
 puxarQuizz();
 function puxarQuizz() {
@@ -31,14 +32,34 @@ function puxarQuizz() {
 
 function adicionarQuizz(ref) {
     TodosQuizz = ref.data;
+    if (lista_criado.length > 0) {
+        document.querySelector(".criados").innerHTML = 
+        `<div onclick="criarQuizz()" class="criaquizz2">
+            <h1>Seus Quizzes</h1>
+            <img src="/ArquivosDeMídia/Rectangle 33.png">
+        </div> 
+        <div class="oscriados"> 
+        </div>`
+
+
+    } 
 
     for (let i = 0; i < TodosQuizz.length; i++) {
+        if (TodosQuizz[i].id == lista_criado[TodosQuizz[i].id]) {
+            let SeuQuiz = document.querySelector(".oscriados");
+            SeuQuiz.innerHTML += 
+            `<div onclick="proximaPagina(this)" class="tema id${TodosQuizz[i].id}">
+                 <img src=${TodosQuizz[i].image}>
+                 <p class="TituloQuizz">${TodosQuizz[i].title}</p>
+            </div>`
+        } else {
         let caixa = document.querySelector(".todos");
         caixa.innerHTML +=
             `<div onclick="proximaPagina(this)" class="tema id${TodosQuizz[i].id}">
                 <img src=${TodosQuizz[i].image}>
                 <p class="TituloQuizz">${TodosQuizz[i].title}</p>
             </div>`
+        }
     }
     console.log(TodosQuizz);
 
@@ -332,6 +353,10 @@ function reiniciar(){
 
 
 
-function enviar(){
+function enviar(ref){
+    id_criado = ref;
+    localStorage.setItem(id_criado.data.id, id_criado.data.id);
+    const mostrar = localStorage.getItem("ID");
+    console.log(mostrar)
 alert("deu boa")
 }

@@ -4,13 +4,12 @@ let URl_imagem = "";
 let quantidade_perguntas = "";
 let quantidade_niveis = "";
 let valida_url = false;
-
 let txt_pergunta = "";
 let cor_fundo = "";
 let txt_resposta = "";
 let url_resposta = "";
 let Resposta = 0
-
+let testee = "";
 let enviar_quizz = {};
 let Tdsperguntas = [];
 let Tdslevels = [];
@@ -22,7 +21,10 @@ let URL_nivel = false;
 let descricao_nivel = "";
 let id_criado = "";
 let lista_criado = localStorage;
-
+let apaga = "";
+let meusQuizz = [];
+let idd = "";
+let reffir = 0;
 puxarQuizz();
 function puxarQuizz() {
     const promessa = axios.get('https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes');
@@ -34,7 +36,7 @@ function adicionarQuizz(ref) {
     TodosQuizz = ref.data;
     if (lista_criado.length > 0) {
         for(let ii = 0; ii < TodosQuizz.length; ii++) {
-            if (TodosQuizz[ii].id == lista_criado[TodosQuizz[ii].id]) {
+            if (TodosQuizz[ii].id == lista_criado["id" + TodosQuizz[ii].id]) {
                 document.querySelector(".criados").innerHTML = 
         `<div class="criaquizz2">
             <h1>Seus Quizzes</h1>
@@ -45,29 +47,36 @@ function adicionarQuizz(ref) {
         ii=TodosQuizz.length;
             }
         }
-        
+
 
 
     } 
 
     for (let i = 0; i < TodosQuizz.length; i++) {
-        if (TodosQuizz[i].id == lista_criado[TodosQuizz[i].id]) {
+        if (TodosQuizz[i].id == lista_criado["id" + TodosQuizz[i].id]) {
+           
+            let quarda = TodosQuizz[i];
+            idd = TodosQuizz[i].id;
+            meusQuizz.push(quarda) ;
+            console.log(meusQuizz);
+            console.log(quarda);
             let SeuQuiz = document.querySelector(".oscriados");
             SeuQuiz.innerHTML += 
-            `<div onclick="proximaPagina(this)" class="tema id${TodosQuizz[i].id}">
+            `<div onclick="proximaPagina(this)" class="tema ${TodosQuizz[i].id} i${reffir}">
                     <div class="veu"> 
                     <p class="TituloQuizz">${TodosQuizz[i].title}</p></div>
                     <div class="editar_bonus">
-                        <img onclick="editar_quizz(this)" class="editar_img" src="/ArquivosDeMídia/editar_pronto.png" >
-                        <img onclick="apagar_quizz(this)" class="editar_img" src="/ArquivosDeMídia/lixeira_pronto.png" >
+                        <img onclick="editar_quizz(this)" class="editar_img ${TodosQuizz[i].id}" src="/ArquivosDeMídia/editar_pronto.png" >
+                        <img onclick="apagar_quizz(this)" class="editar_img ${TodosQuizz[i].id}" src="/ArquivosDeMídia/lixeira_pronto.png" >
                     </div>
                  <img class="img_servidor" src=${TodosQuizz[i].image}>
                  
             </div>`
+            reffir ++
         } else {
         let caixa = document.querySelector(".todos");
         caixa.innerHTML +=
-            `<div onclick="proximaPagina(this)" class="tema id${TodosQuizz[i].id}">
+            `<div onclick="proximaPagina(this)" class="tema ${TodosQuizz[i].id}">
             <div class="veu"> 
             <p class="TituloQuizz">${TodosQuizz[i].title}</p></div>
                 <img class="img_servidor" src=${TodosQuizz[i].image}>
@@ -79,10 +88,27 @@ function adicionarQuizz(ref) {
 
 }
 function editar_quizz(ref) {
-    console.log("editar-teste")
+
+   
 }
+
 function apagar_quizz(ref){
-    console.log("apagar-teste")
+    testee = ref;
+    var result = confirm("Tem certeza que deseja excluir o Quizz?")
+    if (result == true){
+    const deletei = axios.delete(`https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/${ref.classList[1]}`,
+    { headers: 
+        { 'Secret-Key': localStorage[ref.classList[1]]}
+    }
+    )
+    
+    deletei.then(reiniciar);
+    
+    
+    } else {
+        return
+    }
+    
 }
 
 function erro() {
@@ -375,6 +401,8 @@ function reiniciar(){
 
 function enviar(ref){
     id_criado = ref;
-    localStorage.setItem(id_criado.data.id, id_criado.data.id);
+    localStorage.setItem("id" + id_criado.data.id, id_criado.data.id);
+    localStorage.setItem(id_criado.data.id, id_criado.data.key);
+    console.log(id_criado.data)
     const mostrar = localStorage.getItem("ID");
 }

@@ -40,7 +40,8 @@ body {
     width: 90%;
 
 }
-.criaquizz2{
+
+.criaquizz2 {
     display: flex;
     margin-bottom: 5px;
     width: 100%;
@@ -48,13 +49,15 @@ body {
     align-items: center;
     text-align: center;
 }
+
 .criaquizz2 h1 {
     align-items: center;
     justify-content: center;
     margin-right: 10px;
-   margin: auto 0;
-   margin-right: 15px;
+    margin: auto 0;
+    margin-right: 15px;
 }
+
 header {
     width: 100vw;
     height: 69px;
@@ -69,6 +72,26 @@ header {
     position: fixed;
     top: 0;
     z-index: 100;
+}
+
+.editar_bonus {
+    position: absolute;
+    align-items: center;
+    justify-content: space-around;
+    width: 37px;
+    height: 80px;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    background-color: #EC362D;
+    border-radius: 10px 0px 0px 11px;
+    right: 0;
+    top: 9px;
+}
+
+.editar_img {
+    max-width: 22px;
+    max-height: 22px;
 }
 
 /*Aqui dá inicio ao layout da página 2*/
@@ -309,7 +332,8 @@ button :hover {
     min-height: 182px;
     width: 100%;
 }
-.oscriados{
+
+.oscriados {
     display: flex;
     flex-wrap: wrap;
     min-height: 182px;
@@ -337,13 +361,16 @@ h2 {
     color: #B9B9B9;
 
 }
-.veu{
-    position:absolute;
+
+.veu {
+    position: absolute;
     min-width: 100%;
     min-height: 100%;
     z-index: 8;
-    background: linear-gradient(to bottom, rgba(255,0,0,0) 0%,rgb(5, 5, 5) 100%);
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 0) 0%, rgb(5, 5, 5) 100%);
+    border-radius: 5px;
 }
+
 .tema {
     display: flex;
     justify-content: center;
@@ -353,7 +380,7 @@ h2 {
     margin-right: 15px;
     margin-bottom: 12px;
     position: relative;
-    
+    border-radius: 5px;
 }
 
 .tema :hover {
@@ -361,7 +388,7 @@ h2 {
     box-shadow: 0 0 50px rgba(78, 47, 255, 0.938);
 }
 
-.tema img {
+.img_servidor {
 
     max-width: 100%;
     min-width: 100%;
@@ -371,7 +398,7 @@ h2 {
 }
 
 .TituloQuizz {
-    min-width: 100%;
+    max-width: 100%;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -381,6 +408,7 @@ h2 {
     position: absolute;
     bottom: 7px;
     text-align: center;
+    word-wrap:break-word;
 
 }
 
@@ -463,13 +491,15 @@ input {
     .listaQuizz {
         max-width: 400px;
     }
+
     .criaquizz2 {
         justify-content: space-between;
         padding-left: 20px;
         padding-right: 37px;
         box-sizing: border-box;
     }
-    .tdsquiz{
+
+    .tdsquiz {
         margin-left: 20px;
     }
 
@@ -477,7 +507,8 @@ input {
         display: flex;
         justify-content: center;
     }
-    .oscriados{
+
+    .oscriados {
         display: flex;
         justify-content: center;
     }

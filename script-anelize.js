@@ -5,7 +5,7 @@ const scrollarInicio = document.querySelector(".tituloDoQuizz");
 let quizzSelecionado = 0;//vai receber o id
 let acessarLista = [];//recebe as caracteristicas do quizz que foi selecionado
 let questoes = [];//vai recebe uma parte de acessar lista
-let quantidadeDeRespostas=0;//essa variavel vai falar a quantidade de respostas que cada pergunta vai ter (pode ser 2,3 ou 4)
+let quantidadeDeRespostas="";//essa variavel vai falar a quantidade de respostas que cada pergunta vai ter (pode ser 2,3 ou 4)
 let respostaQuizz;
 let respostasUsuario = [];
 let numeroDePergunta = 0;
@@ -24,14 +24,16 @@ function proximaPagina(id){
     adicionandoDados();    
 }
 function irParaPagina2(){
-    document.querySelector(".listaQuizz").classList.add("invisivel");   
+    document.querySelector(".listaQuizz").classList.add("invisivel");  
+
 }
 function adicionandoDados(){ 
     //carrega dados necessários no meu html
     acessarLista = TodosQuizz[quizzSelecionado];            
     acessandoPagina2.innerHTML = `<div class="tituloDoQuizz">
     <img src=${acessarLista.image}>
-    <div>${acessarLista.title}</div>
+    <div class="escurecido"></div>
+    <div>${acessarLista.title}</div>    
     </div>`;
     numeroDePerguntas = acessarLista.questions.length;//a partir daqui vou saber quantas perguntas ezistem para cada quizz
     questoes = acessarLista.questions;   
@@ -82,7 +84,7 @@ function selecionarAlternativa(elemento,i,j){
     let asRespostas = perguntaQueFoiSelecionada.answers[respostaSelecionada].isCorrectAnswer;      
     respostasUsuario.push(asRespostas);
     //Após 2 segundos de respondida, deve-se scrollar a página para a próxima pergunta
-    setTimeout(scrollarPagina,2000);
+   // setTimeout(scrollarPagina,2000);
     verificaSelecionados();
 
    }
@@ -122,7 +124,7 @@ function exibirAcerto(){
          }                 
     
     acessandoPagina2.innerHTML += ` <div class="porcentagemAcerto">
-    <div class="porcentagem">Aqui vai a porcentagem de acerto${calculo3}%</div>
+    <div class="porcentagem">Você acertou ${calculo3}%</div>
     <div class="porcentagemTexto">
         <img src=${url}>
         <div>${texto}</div>
@@ -150,6 +152,7 @@ function voltarPaginaInicial(){
     niveis = 0;
     listaNiveis = [];
     document.querySelector(".listaQuizz").classList.remove("invisivel");  
+    document.querySelector(".listaQuizz").scrollIntoView();
     }
     
     

@@ -33,13 +33,19 @@ function puxarQuizz() {
 function adicionarQuizz(ref) {
     TodosQuizz = ref.data;
     if (lista_criado.length > 0) {
-        document.querySelector(".criados").innerHTML = 
+        for(let ii = 0; ii < TodosQuizz.length; ii++) {
+            if (TodosQuizz[ii].id == lista_criado[TodosQuizz[ii].id]) {
+                document.querySelector(".criados").innerHTML = 
         `<div class="criaquizz2">
             <h1>Seus Quizzes</h1>
             <img onclick="criarQuizz()" src="/ArquivosDeMídia/Rectangle 33.png">
         </div> 
         <div class="oscriados"> 
         </div>`
+        ii=TodosQuizz.length;
+            }
+        }
+        
 
 
     } 
@@ -51,7 +57,11 @@ function adicionarQuizz(ref) {
             `<div onclick="proximaPagina(this)" class="tema id${TodosQuizz[i].id}">
                     <div class="veu"> 
                     <p class="TituloQuizz">${TodosQuizz[i].title}</p></div>
-                 <img src=${TodosQuizz[i].image}>
+                    <div class="editar_bonus">
+                        <img onclick="editar_quizz(this)" class="editar_img" src="/ArquivosDeMídia/editar_pronto.png" >
+                        <img onclick="apagar_quizz(this)" class="editar_img" src="/ArquivosDeMídia/lixeira_pronto.png" >
+                    </div>
+                 <img class="img_servidor" src=${TodosQuizz[i].image}>
                  
             </div>`
         } else {
@@ -61,13 +71,19 @@ function adicionarQuizz(ref) {
             `<div onclick="proximaPagina(${i})" class="tema id${TodosQuizz[i].id}">
             <div class="veu"> 
             <p class="TituloQuizz">${TodosQuizz[i].title}</p></div>
-                <img src=${TodosQuizz[i].image}>
+                <img class="img_servidor" src=${TodosQuizz[i].image}>
                 
             </div>`
         }
     }
     console.log(TodosQuizz);
 
+}
+function editar_quizz(ref) {
+    console.log("editar-teste")
+}
+function apagar_quizz(ref){
+    console.log("apagar-teste")
 }
 
 function erro() {
@@ -362,6 +378,4 @@ function enviar(ref){
     id_criado = ref;
     localStorage.setItem(id_criado.data.id, id_criado.data.id);
     const mostrar = localStorage.getItem("ID");
-    console.log(mostrar)
-alert("deu boa")
 }
